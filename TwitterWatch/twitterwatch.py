@@ -102,7 +102,7 @@ class TwitterWatch:
 
     def sentiment(
         self, tweets: list[TweetType], labels: list[str]
-    ) -> dict[str, float]:
+    ) -> DefaultDict[str, float]:
         """
         Run sentiment analysis on provided tweets and labels.
 
@@ -113,13 +113,13 @@ class TwitterWatch:
         Returns:
             Dictionary of average score per label
         """
-        sentiments = defaultdict(int)
+        sentiments: DefaultDict[str, float] = defaultdict(float)
         sentiment_analysis = self.classifier([*map(lambda tweet: tweet.tweet, tweets)], labels)  # type: ignore
 
-        for idx, item in enumerate(sentiment_analysis, start = 1):
-            for sentiment, score in zip(item['labels'], item['scores']):
-                sentiments[sentiment] = (sentiments[sentiment] * (idx - 1) + score) / idx 
-        
+        for idx, item in enumerate(sentiment_analysis, start=1):
+            for sentiment, score in zip(item["labels"], item["scores"]):
+                sentiments[sentiment] = (sentiments[sentiment] * (idx - 1) + score) / idx  # type: ignore
+
         return sentiments
 
     def summarize(self, tweets: list[TweetType]) -> list[str]:
