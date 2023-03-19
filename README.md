@@ -1,4 +1,4 @@
-![Tests](/actions/workflows/tests.yml/badge.svg)
+![Tests](actions/workflows/tests.yml/badge.svg)
 
 # TwitterWatch
 
