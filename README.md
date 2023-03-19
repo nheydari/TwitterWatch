@@ -1,3 +1,5 @@
+![Tests](/actions/workflows/tests.yml/badge.svg)
+
 # TwitterWatch
 
 Have you ever wished you could have a summary of particular accounts without reading all of their tweets? Were you ever curious who are the top fans of those accounts? Or simpler, did you ever wish you could search through an account's tweets in a csv file rather than twitter? Here, we can do all of these tasks using several lines of coding.
