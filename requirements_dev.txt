@@ -1,0 +1,7 @@
+pytest>=7.2
+pytest-cov>=4.0
+mypy>=0.991
+flake8>=6.0.0
+tox>=4.0.5
+matplotlib>=3.7.1
+seaborn>=0.12.2
